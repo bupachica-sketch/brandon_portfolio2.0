@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon Ralph U. Pachica | Video Editor & Motion Designer Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#090a0f',
+                            800: '#121520',
+                            700: '#1a1e2e',
+                            600: '#262c42'
+                        },
+                        accent: {
+                            indigo: '#6366f1',
+                            cyan: '#06b6d4',
+                            purple: '#a855f7',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4' },
+                            '50%': { opacity: '0.8' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Glassmorphism Styling -->
+    <style>
+        .glass-panel {
+            background: rgba(18, 21, 32, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-panel-hover:hover {
+            background: rgba(26, 30, 46, 0.75);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.2);
+        }
+
+        .glass-nav {
+            background: rgba(9, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #06b6d4 0%, #6366f1 50%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090a0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e2436;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366f1;
+        }
+
+        .nav-link.active {
+            color: #06b6d4;
+            font-weight: 600;
+        }
+        .nav-link.active::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #06b6d4, #6366f1);
+            border-radius: 2px;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200 font-sans selection:bg-accent-indigo selection:text-white relative overflow-x-hidden">
+
+    <!-- BACKGROUND MESH DECORATION -->
+    <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-accent-indigo/20 rounded-full blur-[128px] animate-pulse-glow"></div>
+        <div class="absolute top-1/3 -right-40 w-96 h-96 bg-accent-cyan/15 rounded-full blur-[128px] animate-pulse-glow" style="animation-delay: 2s;"></div>
+        <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-accent-purple/15 rounded-full blur-[128px] animate-pulse-glow" style="animation-delay: 4s;"></div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <a href="#home" class="flex items-center gap-2 group">
+                    <span class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-cyan to-accent-indigo flex items-center justify-center font-heading font-bold text-white text-xl shadow-lg shadow-accent-indigo/20 group-hover:scale-105 transition-transform">
+                        B
+                    </span>
+                    <span class="font-heading text-xl font-bold tracking-tight text-white group-hover:text-accent-cyan transition-colors">
+                        BRANDON<span class="text-accent-cyan">.DEV</span>
+                    </span>
+                </a>
+
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
+                    <a href="#home" class="nav-link transition-colors hover:text-white py-1">Home</a>
+                    <a href="#video" class="nav-link transition-colors hover:text-white py-1">Video</a>
+                    <a href="#about" class="nav-link transition-colors hover:text-white py-1">About</a>
+                    <a href="#skills" class="nav-link transition-colors hover:text-white py-1">Skills</a>
+                    <a href="#projects" class="nav-link transition-colors hover:text-white py-1">Projects</a>
+                    <a href="#education" class="nav-link transition-colors hover:text-white py-1">Education</a>
+                    <a href="#contact" class="nav-link transition-colors hover:text-white py-1">Contact</a>
+                </nav>
+
+                <div class="hidden md:block">
+                    <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-accent-indigo to-accent-purple hover:from-accent-cyan hover:to-accent-indigo text-white font-medium text-sm transition-all duration-300 shadow-md shadow-accent-indigo/25 hover:shadow-accent-cyan/30 flex items-center gap-2">
+                        <span>Get In Touch</span>
+                        <i class="fa-solid font-xs fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="text-gray-300 hover:text-white focus:outline-none p-2 rounded-lg bg-dark-800 border border-gray-700/50">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden glass-panel border-b border-gray-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-dark-700">Home</a>
+            <a href="#video" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-dark-700">Video</a>
+            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-dark-700">About</a>
+            <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-dark-700">Skills</a>
+            <a href="#projects" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-dark-700">Projects</a>
+            <a href="#education" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-dark-700">Education</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-dark-700">Contact</a>
+            <div class="pt-2">
+                <a href="#contact" class="mobile-nav-link block text-center w-full px-5 py-2.5 rounded-xl bg-gradient-to-r from-accent-indigo to-accent-purple text-white font-medium text-sm">Get In Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-20">
+
+        <!-- 1. HERO SECTION -->
+        <section id="home" class="min-h-[calc(100vh-5rem)] flex items-center py-16 lg:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-accent-cyan/30 text-accent-cyan text-xs font-semibold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-accent-cyan animate-ping"></span>
+                            <span>Open for Video Editing & Motion Graphics Roles</span>
+                        </div>
+
+                        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+                            Hi, I'm <br class="hidden sm:inline">
+                            <span class="text-gradient">Brandon Ralph Pachica</span>
+                        </h1>
+
+                        <div class="h-8 font-heading text-xl sm:text-2xl text-gray-300 font-medium">
+                            <span id="typing-text" class="text-accent-cyan border-r-2 border-accent-indigo pr-1"></span>
+                        </div>
+
+                        <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Video Editor & Motion Designer specializing in high-impact visual effects, 3D intros, velocity edits, and HD enhancements using Alight Motion, CapCut, Blender, and Wink.
+                        </p>
+
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#projects" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-accent-indigo to-accent-cyan hover:from-accent-cyan hover:to-accent-indigo text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-accent-indigo/25 hover:shadow-accent-cyan/30 flex items-center gap-2 group">
+                                <span>View My Projects</span>
+                                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <a href="#contact" class="px-7 py-3.5 rounded-xl glass-panel hover:bg-dark-700 text-white font-semibold text-sm transition-all duration-300 border border-gray-700 flex items-center gap-2">
+                                <span>Contact Me</span>
+                                <i class="fa-regular fa-envelope"></i>
+                            </a>
+                        </div>
+
+                        <div class="pt-6 flex items-center justify-center lg:justify-start gap-4">
+                            <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold mr-2">Connect:</span>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-gray-400 hover:text-white hover:bg-accent-indigo/20 hover:border-accent-indigo/50 transition-all">
+                                <i class="fa-brands fa-github text-lg"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-gray-400 hover:text-white hover:bg-accent-indigo/20 hover:border-accent-indigo/50 transition-all">
+                                <i class="fa-brands fa-linkedin-in text-lg"></i>
+                            </a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center text-gray-400 hover:text-white hover:bg-accent-indigo/20 hover:border-accent-indigo/50 transition-all">
+                                <i class="fa-brands fa-facebook-f text-lg"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="lg:col-span-5 flex justify-center relative">
+                        <div class="relative w-72 h-72 sm:w-88 sm:h-88 lg:w-96 lg:h-96 animate-float">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-accent-cyan via-accent-indigo to-accent-purple rounded-3xl blur-2xl opacity-40"></div>
+                            <div class="relative w-full h-full rounded-3xl p-2 glass-panel border border-gray-700/50 shadow-2xl overflow-hidden">
+                                <img 
+                                    src="6d60f3e2-f7ae-42ca-957d-5707ce5c19db.jpg" 
+                                    alt="Brandon Ralph Pachica Profile Photo" 
+                                    class="w-full h-full object-cover rounded-2xl fallback-img"
+                                    data-label="assets/images/profile-placeholder.jpg"
+                                >
+                            </div>
+
+                            <div class="absolute -top-4 -left-4 glass-panel px-4 py-2.5 rounded-2xl flex items-center gap-3 border border-gray-700/60 shadow-xl">
+                                <div class="w-8 h-8 rounded-lg bg-accent-cyan/20 text-accent-cyan flex items-center justify-center">
+                                    <i class="fa-solid fa-video"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 font-medium">Specialty</p>
+                                    <p class="text-xs font-bold text-white">Video Editing & VFX</p>
+                                </div>
+                            </div>
+
+                            <div class="absolute -bottom-4 -right-4 glass-panel px-4 py-2.5 rounded-2xl flex items-center gap-3 border border-gray-700/60 shadow-xl">
+                                <div class="w-8 h-8 rounded-lg bg-accent-indigo/20 text-accent-indigo flex items-center justify-center">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-400 font-medium">Core Suite</p>
+                                    <p class="text-xs font-bold text-white">Alight Motion • CapCut • Blender • Wink</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 1.5 VIDEO SHOWCASE SECTION -->
+        <section id="video" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                    <span class="text-accent-cyan text-sm font-semibold tracking-widest uppercase">Video Introduction</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Featured Video Showreel</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-accent-cyan to-accent-indigo mx-auto rounded-full"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="glass-panel p-3 sm:p-4 rounded-3xl border border-gray-700/60 shadow-2xl overflow-hidden group">
+                        
+                        <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1rem;">
+                            <iframe 
+                                src="https://www.youtube-nocookie.com/embed/DrWnX3c2VQk" 
+                                title="Showreel / Video Introduction"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+
+                        <div class="p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                            <div>
+                                <h4 class="font-heading text-lg font-bold text-white">Showreel & Project Editing Highlights</h4>
+                                <p class="text-xs sm:text-sm text-gray-400">Watch a sample of speed ramping, visual effects compositing, and cinematic transitions.</p>
+                            </div>
+                            <span class="px-3 py-1.5 rounded-xl bg-accent-indigo/10 border border-accent-indigo/30 text-accent-indigo text-xs font-semibold shrink-0 flex items-center gap-2">
+                                <i class="fa-solid fa-film"></i>
+                                <span>YouTube Showcase</span>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. ABOUT ME SECTION -->
+        <section id="about" class="py-20 bg-dark-800/40 relative border-t border-b border-gray-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="text-accent-cyan text-sm font-semibold tracking-widest uppercase">Get To Know Me</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">About Me</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-accent-cyan to-accent-indigo mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5">
+                        <div class="relative rounded-3xl p-2 glass-panel border border-gray-700/50 shadow-2xl overflow-hidden group">
+                            <img 
+                                src="showreel.jpg" 
+                                alt="About Brandon Ralph Pachica" 
+                                class="w-full h-80 sm:h-96 lg:h-[420px] object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105 fallback-img"
+                                data-label="assets/images/about-placeholder.jpg"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-60"></div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-6">
+                        <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white leading-snug">
+                            Creative Video Editor & Motion Graphics Specialist based in Calamba, Laguna.
+                        </h3>
+                        
+                        <p class="text-gray-300 leading-relaxed">
+                            Hello! I am <strong class="text-white">Brandon Ralph U. Pachica</strong>, a Computer Science student and creative video editor. I specialize in turning raw footage into captivating visual content through dynamic motion design, precise audio syncing, speed ramping, and color grading.
+                        </p>
+                        <p class="text-gray-400 leading-relaxed">
+                            Using platforms like <strong>Alight Motion</strong>, <strong>CapCut</strong>, <strong>Blender</strong>, and <strong>Wink</strong>, I construct smooth velocity transitions, 3D intros, kinetic typography, and ultra-HD video restorations tailored for short-form media and creative reels.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-4 py-4">
+                            <div class="glass-panel p-4 rounded-2xl text-center border border-gray-800">
+                                <span class="font-heading text-2xl sm:text-3xl font-bold text-accent-cyan">20+</span>
+                                <p class="text-xs text-gray-400 font-medium mt-1">Videos Produced</p>
+                            </div>
+                            <div class="glass-panel p-4 rounded-2xl text-center border border-gray-800">
+                                <span class="font-heading text-2xl sm:text-3xl font-bold text-accent-indigo">4</span>
+                                <p class="text-xs text-gray-400 font-medium mt-1">Core Editing Tools</p>
+                            </div>
+                            <div class="glass-panel p-4 rounded-2xl text-center border border-gray-800">
+                                <span class="font-heading text-2xl sm:text-3xl font-bold text-accent-purple">3rd</span>
+                                <p class="text-xs text-gray-400 font-medium mt-1">Academic Year</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <button id="download-cv-btn" class="px-7 py-3 rounded-xl bg-gradient-to-r from-accent-indigo to-accent-purple hover:from-accent-purple hover:to-accent-indigo text-white font-semibold text-sm transition-all duration-300 shadow-md shadow-accent-indigo/25 flex items-center gap-2">
+                                <i class="fa-solid fa-download"></i>
+                                <span>Download CV / Resume</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. SKILLS SECTION -->
+        <section id="skills" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="text-accent-cyan text-sm font-semibold tracking-widest uppercase">Video Production & Creative Suite</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Skills & Competencies</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-accent-cyan to-accent-indigo mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Skill 1: Alight Motion -->
+                    <div class="glass-panel p-6 rounded-2xl glass-panel-hover cursor-pointer" role="button" tabindex="0" aria-label="Preview Alight Motion Velocity & Glow Edit" data-skill-title="Alight Motion Velocity & Glow Edit" data-skill-image="assets/images/alight-motion.jpg" data-skill-description="High-energy velocity curves, optical glow effects, and multi-layer keyframe animations created in Alight Motion." onclick="openSkillPreview(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSkillPreview(this)}">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                                <h3 class="font-heading font-semibold text-lg text-white">Alight Motion</h3>
+                            </div>
+                            <span class="text-xs font-bold text-accent-cyan">92%</span>
+                        </div>
+                        <div class="w-full bg-dark-900 rounded-full h-2.5 overflow-hidden p-0.5 border border-gray-800">
+                            <div class="bg-gradient-to-r from-emerald-500 to-accent-cyan h-full rounded-full transition-all duration-1000" style="width: 92%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2: CapCut -->
+                    <div class="glass-panel p-6 rounded-2xl glass-panel-hover cursor-pointer" role="button" tabindex="0" aria-label="Preview CapCut Beat-Sync & Transition Edit" data-skill-title="CapCut Beat-Sync & Transition Edit" data-skill-image="assets/images/capcut.jpg" data-skill-description="Short-form video edits featuring synchronized cuts, smooth transitions, beat detection, and creative visual effects made with CapCut." onclick="openSkillPreview(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSkillPreview(this)}">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-scissors"></i>
+                                </div>
+                                <h3 class="font-heading font-semibold text-lg text-white">CapCut Suite</h3>
+                            </div>
+                            <span class="text-xs font-bold text-accent-cyan">95%</span>
+                        </div>
+                        <div class="w-full bg-dark-900 rounded-full h-2.5 overflow-hidden p-0.5 border border-gray-800">
+                            <div class="bg-gradient-to-r from-cyan-500 to-accent-indigo h-full rounded-full transition-all duration-1000" style="width: 95%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3: Blender 3D -->
+                    <div class="glass-panel p-6 rounded-2xl glass-panel-hover cursor-pointer" role="button" tabindex="0" aria-label="Preview Blender 3D Motion & Animation" data-skill-title="Blender 3D Motion & Animation" data-skill-image="assets/images/blender.jpg" data-skill-description="3D modeling, motion graphics, custom lighting, camera movement, and rendered animation created using Blender." onclick="openSkillPreview(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSkillPreview(this)}">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-cube"></i>
+                                </div>
+                                <h3 class="font-heading font-semibold text-lg text-white">Blender 3D</h3>
+                            </div>
+                            <span class="text-xs font-bold text-accent-cyan">80%</span>
+                        </div>
+                        <div class="w-full bg-dark-900 rounded-full h-2.5 overflow-hidden p-0.5 border border-gray-800">
+                            <div class="bg-gradient-to-r from-orange-500 to-accent-purple h-full rounded-full transition-all duration-1000" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 4: Wink Video Retouching -->
+                    <div class="glass-panel p-6 rounded-2xl glass-panel-hover cursor-pointer" role="button" tabindex="0" aria-label="Preview Wink Video Retouching & Enhancement" data-skill-title="Wink Video Retouching & Enhancement" data-skill-image="assets/images/wink.jpg" data-skill-description="Video enhancement, AI-powered retouching, facial detail refinement, sharpening, and visual quality improvements using Wink." onclick="openSkillPreview(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSkillPreview(this)}">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </div>
+                                <h3 class="font-heading font-semibold text-lg text-white">Wink Retouching</h3>
+                            </div>
+                            <span class="text-xs font-bold text-accent-cyan">88%</span>
+                        </div>
+                        <div class="w-full bg-dark-900 rounded-full h-2.5 overflow-hidden p-0.5 border border-gray-800">
+                            <div class="bg-gradient-to-r from-pink-500 to-accent-cyan h-full rounded-full transition-all duration-1000" style="width: 88%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 5: Speed Ramping & Velocity -->
+                    <div class="glass-panel p-6 rounded-2xl glass-panel-hover cursor-pointer" role="button" tabindex="0" aria-label="Preview Speed Ramping & Velocity Edit" data-skill-title="Speed Ramping & Velocity Edit" data-skill-image="assets/images/speed-ramping.jpg" data-skill-description="Dynamic speed changes, smooth velocity curves, slow-motion sequences, and fast transitions designed to create engaging edits." onclick="openSkillPreview(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSkillPreview(this)}">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-gauge-high"></i>
+                                </div>
+                                <h3 class="font-heading font-semibold text-lg text-white">Speed Ramping</h3>
+                            </div>
+                            <span class="text-xs font-bold text-accent-cyan">90%</span>
+                        </div>
+                        <div class="w-full bg-dark-900 rounded-full h-2.5 overflow-hidden p-0.5 border border-gray-800">
+                            <div class="bg-gradient-to-r from-indigo-500 to-accent-indigo h-full rounded-full transition-all duration-1000" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 6: Color Grading -->
+                    <div class="glass-panel p-6 rounded-2xl glass-panel-hover cursor-pointer" role="button" tabindex="0" aria-label="Preview Cinematic Color Grading" data-skill-title="Cinematic Color Grading" data-skill-image="assets/images/color-grading.jpg" data-skill-description="Cinematic color adjustments using contrast, exposure, saturation, highlights, and shadows to create a consistent visual mood." onclick="openSkillPreview(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openSkillPreview(this)}">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-sliders"></i>
+                                </div>
+                                <h3 class="font-heading font-semibold text-lg text-white">Color Grading</h3>
+                            </div>
+                            <span class="text-xs font-bold text-accent-cyan">86%</span>
+                        </div>
+                        <div class="w-full bg-dark-900 rounded-full h-2.5 overflow-hidden p-0.5 border border-gray-800">
+                            <div class="bg-gradient-to-r from-yellow-500 to-accent-purple h-full rounded-full transition-all duration-1000" style="width: 86%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. PROJECTS SECTION -->
+        <section id="projects" class="py-20 bg-dark-800/40 relative border-t border-b border-gray-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                    <span class="text-accent-cyan text-sm font-semibold tracking-widest uppercase">Tool-Based Showcase</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Projects Gallery</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-accent-cyan to-accent-indigo mx-auto rounded-full"></div>
+                </div>
+
+                <!-- CATEGORY FILTER BUTTONS FOR TOOLS -->
+                <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+                    <button class="project-filter-btn active px-5 py-2 rounded-xl text-xs font-semibold glass-panel border border-accent-cyan/50 text-white bg-accent-cyan/10" data-filter="all">All Tools</button>
+                    <button class="project-filter-btn px-5 py-2 rounded-xl text-xs font-semibold glass-panel border border-gray-800 text-gray-400 hover:text-white" data-filter="alightmotion">Alight Motion</button>
+                    <button class="project-filter-btn px-5 py-2 rounded-xl text-xs font-semibold glass-panel border border-gray-800 text-gray-400 hover:text-white" data-filter="capcut">CapCut</button>
+                    <button class="project-filter-btn px-5 py-2 rounded-xl text-xs font-semibold glass-panel border border-gray-800 text-gray-400 hover:text-white" data-filter="blender">Blender</button>
+                    <button class="project-filter-btn px-5 py-2 rounded-xl text-xs font-semibold glass-panel border border-gray-800 text-gray-400 hover:text-white" data-filter="wink">Wink</button>
+                </div>
+
+                <!-- 6 PROJECT CARDS GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- PROJECT CARD 1: ALIGHT MOTION -->
+                    <div class="project-card glass-panel rounded-2xl overflow-hidden glass-panel-hover flex flex-col" data-category="alightmotion">
+                        <div class="relative h-48 overflow-hidden group">
+                            <img src="am.png" alt="Alight Motion Velocity Edit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 fallback-img" data-label="am.png">
+                            <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                                <button class="open-lightbox p-3 rounded-full bg-accent-cyan text-dark-900 font-bold hover:scale-110 transition-transform" data-img="amm.jpg" data-title="Alight Motion Velocity & Glow Edit" data-desc="High-energy velocity curves, optical glow effects, and multi-layer keyframe animations created in Alight Motion.">
+                                    <i class="fa-solid fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Alight Motion</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase bg-accent-indigo/10 text-accent-indigo border border-accent-indigo/30">Velocity</span>
+                                </div>
+                                <h3 class="font-heading text-xl font-bold text-white mb-2">Alight Motion</h3>
+                                <p class="text-gray-400 text-sm line-clamp-3">
+                                    Custom keyframed velocity curves combined with frame blending, glowing edge effects, and audio beat matching.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2 border-t border-gray-800">
+                                <button class="open-lightbox text-xs font-semibold text-accent-cyan hover:underline flex items-center gap-1" data-img="am.png" data-title="Alight Motion Velocity & Glow Edit" data-desc="High-energy velocity curves, optical glow effects, and multi-layer keyframe animations created in Alight Motion.">
+                                    <span>View Details & Preview</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT CARD 2: CAPCUT -->
+                    <div class="project-card glass-panel rounded-2xl overflow-hidden glass-panel-hover flex flex-col" data-category="capcut">
+                        <div class="relative h-48 overflow-hidden group">
+                            <img src="Capcut-icon.png" alt="CapCut Beat-Sync Reel" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 fallback-img" data-label="Capcut-icon.png">
+                            <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                                <button class="open-lightbox p-3 rounded-full bg-accent-cyan text-dark-900 font-bold hover:scale-110 transition-transform" data-img="cap.jpg" data-title="CapCut Beat-Sync & Speed Ramp Reel" data-desc="Fast-paced short reel created with CapCut featuring automatic beat detection, shake transitions, and LUT color filters.">
+                                    <i class="fa-solid fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">CapCut</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase bg-accent-purple/10 text-accent-purple border border-accent-purple/30">Beat Sync</span>
+                                </div>
+                                <h3 class="font-heading text-xl font-bold text-white mb-2">CapCut Transition</h3>
+                                <p class="text-gray-400 text-sm line-clamp-3">
+                                    Short-form video edit engineered with synchronized cuts, 3D zoom effects, and vibrant color presets.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2 border-t border-gray-800">
+                                <button class="open-lightbox text-xs font-semibold text-accent-cyan hover:underline flex items-center gap-1" data-img="Capcut-icon.png" data-title="CapCut Beat-Sync & Speed Ramp Reel" data-desc="Fast-paced short reel created with CapCut featuring automatic beat detection, shake transitions, and LUT color filters.">
+                                    <span>View Details & Preview</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT CARD 3: BLENDER -->
+                    <div class="project-card glass-panel rounded-2xl overflow-hidden glass-panel-hover flex flex-col" data-category="blender">
+                        <div class="relative h-48 overflow-hidden group">
+                            <img src="Blender-Symbol.png" alt="Blender 3D Motion Intro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 fallback-img" data-label="Blender-Symbol.png">
+                            <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                                <button class="open-lightbox p-3 rounded-full bg-accent-cyan text-dark-900 font-bold hover:scale-110 transition-transform" data-img="Screenshot 2026-11-07 193024.png" data-title="Blender 3D Motion Intro & Logo Reveal" data-desc="3D logo reveal and motion graphics intro rendered in Blender EEVEE/Cycles engine with custom lighting and camera paths.">
+                                    <i class="fa-solid fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase bg-orange-500/10 text-orange-400 border border-orange-500/30">Blender</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/30">3D Animation</span>
+                                </div>
+                                <h3 class="font-heading text-xl font-bold text-white mb-2">Blender 3D Structure</h3>
+                                <p class="text-gray-400 text-sm line-clamp-3">
+                                    3D intro animation featuring metallic material shaders, dynamic lighting rigs, and camera tracking rendered in Blender.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2 border-t border-gray-800">
+                                <button class="open-lightbox text-xs font-semibold text-accent-cyan hover:underline flex items-center gap-1" data-img="Blender-Symbol.png" data-title="Blender 3D Motion Intro & Logo Reveal" data-desc="3D logo reveal and motion graphics intro rendered in Blender EEVEE/Cycles engine with custom lighting and camera paths.">
+                                    <span>View Details & Preview</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT CARD 4: WINK -->
+                    <div class="project-card glass-panel rounded-2xl overflow-hidden glass-panel-hover flex flex-col" data-category="wink">
+                        <div class="relative h-48 overflow-hidden group">
+                            <img src="wink.webp" alt="Wink Ultra-HD Enhancer" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 fallback-img" data-label="wink.webp">
+                            <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                                <button class="open-lightbox p-3 rounded-full bg-accent-cyan text-dark-900 font-bold hover:scale-110 transition-transform" data-img="5c54db04-5181-47c7-99f1-a5c8905797c4.jpg" data-title="Wink Ultra-HD Video Quality & Retouch" data-desc="High-definition resolution enhancement, frame sharpening, and AI portrait smoothing performed using Wink.">
+                                    <i class="fa-solid fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase bg-pink-500/10 text-pink-400 border border-pink-500/30">Wink</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase bg-accent-indigo/10 text-accent-indigo border border-accent-indigo/30">HD Enhancement</span>
+                                </div>
+                                <h3 class="font-heading text-xl font-bold text-white mb-2">Wink Ultra-HD Video Enhancement</h3>
+                                <p class="text-gray-400 text-sm line-clamp-3">
+                                    Video restoration and quality upgrade utilizing Wink's AI detail sharpening, frame rate smoothing, and color refinement.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2 border-t border-gray-800">
+                                <button class="open-lightbox text-xs font-semibold text-accent-cyan hover:underline flex items-center gap-1" data-img="wink.webp" data-title="Wink Ultra-HD Video Quality & Retouch" data-desc="High-definition resolution enhancement, frame sharpening, and AI portrait smoothing performed using Wink.">
+                                    <span>View Details & Preview</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT CARD 5: ALIGHT MOTION -->
+                    <div class="project-card glass-panel rounded-2xl overflow-hidden glass-panel-hover flex flex-col" data-category="alightmotion">
+                        <div class="relative h-48 overflow-hidden group">
+                            <img src="Adobe_After_Effects_CC_icon.svg.webp" alt="Alight Motion Kinetic Typography" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 fallback-img" data-label="Adobe_After_Effects_CC_icon.svg.webp">
+                            <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                                <button class="open-lightbox p-3 rounded-full bg-accent-cyan text-dark-900 font-bold hover:scale-110 transition-transform" data-img="images.jpg" data-title="Alight Motion Kinetic Typography" data-desc="Complex text animation preset created in Alight Motion with custom graphs, text distortion, and shake effects.">
+                                    <i class="fa-solid fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Alight Motion</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase bg-accent-purple/10 text-accent-purple border border-accent-purple/30">Typography</span>
+                                </div>
+                                <h3 class="font-heading text-xl font-bold text-white mb-2">Adobe After Effects</h3>
+                                <p class="text-gray-400 text-sm line-clamp-3">
+                                    Dynamic lyrics and text animation preset utilizing keyframe graph curves, text tracking, and glitch displacement.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2 border-t border-gray-800">
+                                <button class="open-lightbox text-xs font-semibold text-accent-cyan hover:underline flex items-center gap-1" data-img="Adobe_After_Effects_CC_icon.svg.webp" data-title="Alight Motion Kinetic Typography" data-desc="Complex text animation preset created in Alight Motion with custom graphs, text distortion, and shake effects.">
+                                    <span>View Details & Preview</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT CARD 6: CAPCUT -->
+                    <div class="project-card glass-panel rounded-2xl overflow-hidden glass-panel-hover flex flex-col" data-category="capcut">
+                        <div class="relative h-48 overflow-hidden group">
+                            <img src="Adobe_Photoshop_Lightroom_CC_logo.svg.webp" alt="CapCut Speed Ramp & Masking" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 fallback-img" data-label="Adobe_Photoshop_Lightroom_CC_logo.svg.webp">
+                            <div class="absolute inset-0 bg-dark-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+                                <button class="open-lightbox p-3 rounded-full bg-accent-cyan text-dark-900 font-bold hover:scale-110 transition-transform" data-img="images (1).jpg" data-title="CapCut Multi-Layer Masking Edit" data-desc="Creative overlay and video masking composite with smooth motion blur transitions made using CapCut Pro.">
+                                    <i class="fa-solid fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">CapCut</span>
+                                    <span class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wide uppercase bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/30">Masking</span>
+                                </div>
+                                <h3 class="font-heading text-xl font-bold text-white mb-2">Adobe Lightroom</h3>
+                                <p class="text-gray-400 text-sm line-clamp-3">
+                                    Visual overlay transition effect created by combining split-screen video masking with motion blur sweeps.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2 border-t border-gray-800">
+                                <button class="open-lightbox text-xs font-semibold text-accent-cyan hover:underline flex items-center gap-1" data-img="Adobe_Photoshop_Lightroom_CC_logo.svg.webp" data-title="CapCut Multi-Layer Masking Edit" data-desc="Creative overlay and video masking composite with smooth motion blur transitions made using CapCut Pro.">
+                                    <span>View Details & Preview</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. EDUCATION SECTION -->
+        <section id="education" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="text-accent-cyan text-sm font-semibold tracking-widest uppercase">Academic Timeline</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Education Background</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-accent-cyan to-accent-indigo mx-auto rounded-full"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto relative pl-6 sm:pl-8 border-l-2 border-gray-800 space-y-12">
+
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full bg-dark-900 border-4 border-accent-cyan group-hover:scale-125 transition-transform"></div>
+                        
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl glass-panel-hover space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/30">
+                                    Present Degree
+                                </span>
+                                <span class="text-xs font-semibold text-gray-400">Expected Graduation: 2026</span>
+                            </div>
+                            <h3 class="font-heading text-xl sm:text-2xl font-bold text-white">Bachelor of Science in Computer Science</h3>
+                            <p class="text-accent-indigo font-medium text-sm">City College of Calamba — Calamba, Laguna</p>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Specializing in Computer Science fundamentals while applying technical precision to digital video post-production, interactive media design, and multimedia algorithms.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-md text-[11px] bg-dark-900 text-gray-300 border border-gray-800">Multimedia Systems</span>
+                                <span class="px-2.5 py-1 rounded-md text-[11px] bg-dark-900 text-gray-300 border border-gray-800">Computer Science</span>
+                                <span class="px-2.5 py-1 rounded-md text-[11px] bg-dark-900 text-gray-300 border border-gray-800">UI/UX Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full bg-dark-900 border-4 border-accent-indigo group-hover:scale-125 transition-transform"></div>
+                        
+                        <div class="glass-panel p-6 sm:p-8 rounded-2xl glass-panel-hover space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent-indigo/10 text-accent-indigo border border-accent-indigo/30">
+                                    Senior High School
+                                </span>
+                                <span class="text-xs font-semibold text-gray-400">Completed</span>
+                            </div>
+                            <h3 class="font-heading text-xl sm:text-2xl font-bold text-white">GAS - General Academics</h3>
+                            <p class="text-accent-indigo font-medium text-sm">Saint Benilde International School — Calamba, Laguna</p>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Completed senior high school technical foundations in ICT, creative media production, digital arts, and graphic presentation.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. CONTACT SECTION -->
+        <section id="contact" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                    <span class="text-accent-cyan text-sm font-semibold tracking-widest uppercase">Let's Connect</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">Contact Me</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-accent-cyan to-accent-indigo mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        
+                        <div class="space-y-4">
+                            <h3 class="font-heading text-2xl font-bold text-white">Have a video editing project?</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                I am currently available for freelance video editing projects, short-form reels, gaming montages, and video editing commissions. Feel free to send a message!
+                            </p>
+                        </div>
+
+                        <div class="glass-panel p-5 rounded-2xl flex items-center gap-4 border border-gray-800">
+                            <div class="w-12 h-12 rounded-xl bg-accent-cyan/10 text-accent-cyan flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400 font-medium">Send An Email</p>
+                                <a href="mailto:brandonpachica@gmail.com" class="text-sm font-bold text-white hover:text-accent-cyan transition-colors">
+                                    brandonpachica@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel p-5 rounded-2xl flex items-center gap-4 border border-gray-800">
+                            <div class="w-12 h-12 rounded-xl bg-accent-indigo/10 text-accent-indigo flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400 font-medium">Location</p>
+                                <p class="text-sm font-bold text-white">
+                                    Calamba City, Laguna, Philippines
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel p-5 rounded-2xl flex items-center gap-4 border border-gray-800">
+                            <div class="w-12 h-12 rounded-xl bg-accent-purple/10 text-accent-purple flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400 font-medium">Current Status</p>
+                                <p class="text-sm font-bold text-white">Available for Video Editing Roles</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <form id="contact-form" class="glass-panel p-8 rounded-3xl border border-gray-800 space-y-6">
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                
+                                <div class="space-y-2">
+                                    <label for="name" class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Your Name *</label>
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        name="name" 
+                                        required 
+                                        placeholder="e.g. Alex Morgan"
+                                        class="w-full px-4 py-3 rounded-xl bg-dark-900/80 border border-gray-700/60 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-all"
+                                    >
+                                </div>
+
+                                <div class="space-y-2">
+                                    <label for="email" class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Your Email *</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        required 
+                                        placeholder="alex@example.com"
+                                        class="w-full px-4 py-3 rounded-xl bg-dark-900/80 border border-gray-700/60 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-all"
+                                    >
+                                </div>
+
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="subject" class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Subject *</label>
+                                <input 
+                                    type="text" 
+                                    id="subject" 
+                                    name="subject" 
+                                    required 
+                                    placeholder="Video Editing Project / Inquiry"
+                                    class="w-full px-4 py-3 rounded-xl bg-dark-900/80 border border-gray-700/60 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-all"
+                                >
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="message" class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Message *</label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    rows="5" 
+                                    required 
+                                    placeholder="Write details about your video editing project here..."
+                                    class="w-full px-4 py-3 rounded-xl bg-dark-900/80 border border-gray-700/60 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-accent-cyan focus:ring-1 focus:ring-accent-cyan transition-all resize-none"
+                                ></textarea>
+                            </div>
+
+                            <button 
+                                type="submit" 
+                                class="w-full py-4 rounded-xl bg-gradient-to-r from-accent-cyan via-accent-indigo to-accent-purple text-white font-bold text-sm tracking-wide shadow-lg shadow-accent-indigo/25 hover:shadow-accent-cyan/30 transition-all duration-300 flex items-center justify-center gap-2"
+                            >
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-900 border-t border-gray-800 py-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <div class="text-center md:text-left space-y-1">
+                    <p class="font-heading font-bold text-white text-lg">
+                        BRANDON<span class="text-accent-cyan">.DEV</span>
+                    </p>
+                    <p class="text-xs text-gray-500">
+                        &copy; <span id="current-year"></span> Brandon Ralph U. Pachica. All rights reserved.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-gray-400">
+                    <a href="#home" class="hover:text-white transition-colors">Home</a>
+                    <a href="#video" class="hover:text-white transition-colors">Video</a>
+                    <a href="#about" class="hover:text-white transition-colors">About</a>
+                    <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                    <a href="#education" class="hover:text-white transition-colors">Education</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub" class="w-8 h-8 rounded-lg bg-dark-800 text-gray-400 hover:text-white hover:bg-accent-indigo/30 flex items-center justify-center text-xs transition-colors">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-8 h-8 rounded-lg bg-dark-800 text-gray-400 hover:text-white hover:bg-accent-indigo/30 flex items-center justify-center text-xs transition-colors">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="w-8 h-8 rounded-lg bg-dark-800 text-gray-400 hover:text-white hover:bg-accent-indigo/30 flex items-center justify-center text-xs transition-colors">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full glass-panel text-accent-cyan border border-accent-cyan/40 shadow-xl opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center hover:bg-accent-cyan hover:text-dark-900">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- LIGHTBOX PREVIEW MODAL -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-dark-900/90 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        <div class="glass-panel max-w-3xl w-full rounded-3xl border border-gray-700/60 overflow-hidden shadow-2xl relative">
+            <button id="close-lightbox" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-dark-900/80 text-gray-400 hover:text-white flex items-center justify-center border border-gray-700">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="h-64 sm:h-96 w-full overflow-hidden bg-dark-900 relative">
+                <img id="modal-img" src="" alt="Preview" class="w-full h-full object-cover fallback-img" data-label="assets/images/project-preview.jpg">
+            </div>
+            <div class="p-6 space-y-2 bg-dark-800/90 border-t border-gray-800">
+                <h3 id="modal-title" class="font-heading text-xl font-bold text-white"></h3>
+                <p id="modal-desc" class="text-sm text-gray-300 leading-relaxed"></p>
+                <a href="https://drive.google.com/drive/folders/1HES7dSTpp1wSM9ugpuf61r0zKJM00Bxz"
+   target="_blank"
+   rel="noopener"
+   class="text-cyan-400 hover:underline text-sm inline-block mt-3">
+    Visit Project
+</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SKILL IMAGE PREVIEW MODAL (matches the requested screenshot) -->
+    <div id="skill-preview-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4 sm:p-6 bg-black/75 backdrop-blur-md">
+        <div class="w-full max-w-3xl rounded-3xl overflow-hidden relative bg-[#121520] border border-[#272d3d] shadow-2xl">
+            <button id="close-skill-preview" type="button" aria-label="Close skill preview" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-[#090c14] border border-gray-700 text-gray-400 hover:text-white flex items-center justify-center text-2xl">&times;</button>
+
+            <div class="relative h-[300px] sm:h-[385px] bg-[#121520] flex items-center justify-center overflow-hidden">
+                <img id="skill-preview-image" src="" alt="Skill preview" class="absolute inset-0 w-full h-full object-cover hidden">
+                <div id="skill-preview-placeholder" class="flex flex-col items-center justify-center text-center gap-4 px-5">
+                    <div class="w-24 h-24 rounded-full border-[3px] border-indigo-500 bg-[#1b2031] flex items-center justify-center">
+                        <svg viewBox="0 0 50 50" class="w-12 h-12" aria-hidden="true">
+                            <path d="M25 10 L46 41 H4 Z" fill="#08BCD4" />
+                            <circle cx="40" cy="9" r="5" fill="#AD4DFF" />
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold text-indigo-500">IMAGE PLACEHOLDER</h2>
+                    <p id="skill-preview-path" class="text-sm text-slate-400">assets/images/skill-preview.jpg</p>
+                    <p class="text-xs text-slate-500">Replace with your actual image file</p>
+                </div>
+                <div class="absolute top-0 bottom-0 left-[17px] border-l-4 border-dashed border-[#303953] pointer-events-none"></div>
+                <div class="absolute top-0 bottom-0 right-[17px] border-r-4 border-dashed border-[#303953] pointer-events-none"></div>
+            </div>
+
+            <div class="p-6 border-t border-[#252b39]">
+                <h3 id="skill-preview-title" class="font-heading text-xl font-bold text-white mb-2">Skill Preview</h3>
+                <p id="skill-preview-description" class="text-sm text-gray-300 leading-relaxed"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast-container" class="fixed top-24 right-6 z-50 space-y-3 pointer-events-none"></div>
+
+    <!-- JAVASCRIPT ENGINE & FALLBACK PLACEHOLDER SYSTEM -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // 1. FALLBACK SVG IMAGE GENERATOR
+            const createSvgPlaceholder = (labelText) => {
+                const cleanText = labelText || 'assets/images/placeholder.jpg';
+                const svg = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+                    <rect width="800" height="600" fill="#121520"/>
+                    <rect x="20" y="20" width="760" height="560" rx="16" fill="none" stroke="#262c42" stroke-width="4" stroke-dasharray="8 8"/>
+                    <circle cx="400" cy="260" r="50" fill="#1e2436" stroke="#6366f1" stroke-width="3"/>
+                    <path d="M380 275 L400 245 L420 275 Z" fill="#06b6d4"/>
+                    <circle cx="415" cy="245" r="5" fill="#a855f7"/>
+                    <text x="400" y="360" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="bold" fill="#6366f1" text-anchor="middle">IMAGE PLACEHOLDER</text>
+                    <text x="400" y="395" font-family="'Space Grotesk', sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">${cleanText}</text>
+                    <text x="400" y="430" font-family="sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Replace with your actual image file</text>
+                </svg>`;
+                return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+            };
+
+            const images = document.querySelectorAll('.fallback-img');
+            images.forEach(img => {
+                const label = img.getAttribute('data-label') || img.getAttribute('src');
+                img.addEventListener('error', () => {
+                    img.src = createSvgPlaceholder(label);
+                });
+                if (!img.complete || img.naturalWidth === 0) {
+                    const temp = new Image();
+                    temp.onload = () => { img.src = img.src; };
+                    temp.onerror = () => { img.src = createSvgPlaceholder(label); };
+                    temp.src = img.src;
+                }
+            });
+
+            // 2. HERO DYNAMIC TYPING EFFECT
+            const typingElement = document.getElementById('typing-text');
+            const phrases = [
+                "Alight Motion & CapCut VFX Specialist",
+                "Blender 3D Motion Designer",
+                "Wink Ultra-HD Video Restorer",
+                "BS Computer Science Student"
+            ];
+            let phraseIdx = 0;
+            let charIdx = 0;
+            let isDeleting = false;
+
+            const typeLoop = () => {
+                const currentPhrase = phrases[phraseIdx];
+                if (isDeleting) {
+                    typingElement.textContent = currentPhrase.substring(0, charIdx - 1);
+                    charIdx--;
+                } else {
+                    typingElement.textContent = currentPhrase.substring(0, charIdx + 1);
+                    charIdx++;
+                }
+
+                let speed = isDeleting ? 40 : 80;
+
+                if (!isDeleting && charIdx === currentPhrase.length) {
+                    speed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && charIdx === 0) {
+                    isDeleting = false;
+                    phraseIdx = (phraseIdx + 1) % phrases.length;
+                    speed = 400;
+                }
+
+                setTimeout(typeLoop, speed);
+            };
+            typeLoop();
+
+            // 3. RESPONSIVE MOBILE MENU TOGGLE
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.classList.replace('fa-xmark', 'fa-bars');
+                } else {
+                    menuIcon.classList.replace('fa-bars', 'fa-xmark');
+                }
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.replace('fa-xmark', 'fa-bars');
+                });
+            });
+
+            // 4. ACTIVE SCROLL SPY & BACK TO TOP BUTTON
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const backToTopBtn = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const scrollY = window.pageYOffset;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120;
+                    const sectionHeight = section.offsetHeight;
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+
+                if (scrollY > 400) {
+                    backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // 5. PROJECT CATEGORY FILTER SYSTEM
+            const filterBtns = document.querySelectorAll('.project-filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'border-accent-cyan/50', 'bg-accent-cyan/10', 'text-white');
+                        b.classList.add('border-gray-800', 'text-gray-400');
+                    });
+                    btn.classList.add('active', 'border-accent-cyan/50', 'bg-accent-cyan/10', 'text-white');
+                    btn.classList.remove('border-gray-800', 'text-gray-400');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // 6. LIGHTBOX MODAL PREVIEW FOR PROJECTS
+            const lightbox = document.getElementById('lightbox-modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDesc = document.getElementById('modal-desc');
+            const closeBtn = document.getElementById('close-lightbox');
+            const openButtons = document.querySelectorAll('.open-lightbox');
+
+            openButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const imgSrc = btn.getAttribute('data-img');
+                    const title = btn.getAttribute('data-title');
+                    const desc = btn.getAttribute('data-desc');
+
+                    modalImg.setAttribute('data-label', imgSrc);
+                    modalImg.src = imgSrc;
+                    modalTitle.textContent = title;
+                    modalDesc.textContent = desc;
+
+                    lightbox.classList.remove('hidden');
+                    setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+                });
+            });
+
+            const closeLightboxHandler = () => {
+                lightbox.classList.add('opacity-0');
+                setTimeout(() => lightbox.classList.add('hidden'), 300);
+            };
+
+            closeBtn.addEventListener('click', closeLightboxHandler);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightboxHandler();
+            });
+
+            // SKILL PREVIEW: one reusable popup for all six skill cards.
+            const skillPreviewModal = document.getElementById('skill-preview-modal');
+            const skillPreviewImage = document.getElementById('skill-preview-image');
+            const skillPreviewPlaceholder = document.getElementById('skill-preview-placeholder');
+            const closeSkillPreviewButton = document.getElementById('close-skill-preview');
+
+            window.openSkillPreview = (card) => {
+                const title = card.dataset.skillTitle;
+                const imagePath = card.dataset.skillImage;
+                const description = card.dataset.skillDescription;
+
+                document.getElementById('skill-preview-title').textContent = title;
+                document.getElementById('skill-preview-description').textContent = description;
+                document.getElementById('skill-preview-path').textContent = imagePath;
+
+                // Show the placeholder first; replace it only if the selected image loads.
+                skillPreviewImage.onload = () => {
+                    skillPreviewImage.classList.remove('hidden');
+                    skillPreviewPlaceholder.classList.add('hidden');
+                };
+                skillPreviewImage.onerror = () => {
+                    skillPreviewImage.classList.add('hidden');
+                    skillPreviewPlaceholder.classList.remove('hidden');
+                };
+                skillPreviewImage.classList.add('hidden');
+                skillPreviewPlaceholder.classList.remove('hidden');
+                skillPreviewImage.src = imagePath;
+
+                skillPreviewModal.classList.remove('hidden');
+                skillPreviewModal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeSkillPreview = () => {
+                skillPreviewModal.classList.add('hidden');
+                skillPreviewModal.classList.remove('flex');
+                document.body.style.overflow = '';
+            };
+
+            closeSkillPreviewButton.addEventListener('click', closeSkillPreview);
+            skillPreviewModal.addEventListener('click', (event) => {
+                if (event.target === skillPreviewModal) closeSkillPreview();
+            });
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !skillPreviewModal.classList.contains('hidden')) {
+                    closeSkillPreview();
+                }
+            });
+
+            // 7. TOAST NOTIFICATION HELPER
+            const showToast = (message, type = 'success') => {
+                const toast = document.createElement('div');
+                toast.className = `pointer-events-auto px-5 py-3 rounded-2xl glass-panel border border-gray-700 text-white text-sm shadow-xl flex items-center gap-3 transition-all duration-300 transform translate-y-4 opacity-0`;
+                
+                const icon = type === 'success' ? 'fa-circle-check text-accent-cyan' : 'fa-circle-info text-accent-indigo';
+                toast.innerHTML = `<i class="fa-solid ${icon} text-lg"></i><span>${message}</span>`;
+                
+                const container = document.getElementById('toast-container');
+                container.appendChild(toast);
+
+                setTimeout(() => {
+                    toast.classList.remove('translate-y-4', 'opacity-0');
+                }, 10);
+
+                setTimeout(() => {
+                    toast.classList.add('opacity-0', 'translate-y-4');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3500);
+            };
+
+            document.getElementById('download-cv-btn').addEventListener('click', () => {
+                showToast("CV download initiated.");
+            });
+
+            // 8. CONTACT FORM SUBMISSION VALIDATION
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                showToast(`Thank you, ${name}! Your message has been sent successfully.`);
+                contactForm.reset();
+            });
+
+        });
+    </script>
+</body>
+</html>
